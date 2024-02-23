@@ -29,13 +29,13 @@ Route::post("/auth/create/user",[UserController::class,"store"])->name("create_u
 Route::middleware("auth:sanctum")->get("/auth/logout", [LoginController::class, "logout"])->name("logout");
 Route::middleware("auth:sanctum")->post("/create_user", [UserController::class, "store"])->name("create_user");
 Route::middleware("auth:sanctum")->post('/edit_user/{id}', [UserController::class, "update"])->name("edit_user");
-Route::middleware("auth:sanctum")->get("/fields", function () {
+Route::middleware("auth:sanctum")->get("/fields_1", function () {
     $fields =  [
         [0, 0, 0, 0, 0, 0],
         [0, 1, 2, 3, 4, 0],
         [0, 5, 6, 7, 8, 0],
         [0, 9, 10, 11, 12, 0],
-        [0, 13, 14, 15, -1, 0],
+        [0, 13, 14, 15, 16, 0],
         [0, 0, 0, 0, 0, 0],
     ];
     return response()->json($fields);

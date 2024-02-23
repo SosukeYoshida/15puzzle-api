@@ -18,7 +18,7 @@ class LoginController extends Controller
             $token = $request->user()->createToken("token")->plainTextToken;
             return response()->json(["success" => true,"token"=>$token,"id"=>Auth::user()->id,"name"=>Auth::user()->name,"email"=>Auth::user()->email], 200);
         }
-        return response()->json(["success" => false, "message" => "認証失敗"], 401);
+        return response()->json(["success" => false, "message" => "アカウントまたはパスワードが正しくありません"], 401);
     }
 
     public function logout(Request $request)
